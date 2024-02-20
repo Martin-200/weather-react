@@ -1,11 +1,15 @@
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+
 import CallToAction from '../components/CallToAction'
 import { ErrorPageProps } from '../types/views/errorPage'
 import HomeIcon from '../assets/icons/HomeIcon.svg?react'
 import '../assets/scss/views/ErrorPage.scss'
+import AppContext from '../contexts/AppContext'
 
 const ErrorPage = ({ errorCode, description }: ErrorPageProps) => {
+    const context = useContext(AppContext)
     const navigate = useNavigate()
     const { t } = useTranslation()
 
@@ -19,7 +23,7 @@ const ErrorPage = ({ errorCode, description }: ErrorPageProps) => {
                     color='white'
                     icon={HomeIcon}
                     handleClickAction={() => {
-                        navigate('/')
+                        navigate(`${context.isProduction ? context.productionBaseRoute : ''}/forecast`)
                     }}
                 />
             </section>

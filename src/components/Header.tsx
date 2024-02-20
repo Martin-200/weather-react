@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             localStorage.setItem(context.lastSearchedCityKey, searchedCity)
             context.setIsSearchingBarLoading(true)
             updateSearchHistory(searchedCity, 12, context.searchHistoryKey)
-            navigate('/forecast', {
+            navigate(`${context.isProduction ? context.productionBaseRoute : ''}/forecast`, {
                 state: {
                     city: searchedCity
                 }
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
             <header className='header'>
                 <div className='header__container'>
                     <div className='brand'>
-                        <div className='brand__container' onClick={() => { navigate('/') }}>
+                        <div className='brand__container' onClick={() => { navigate(`${context.isProduction ? context.productionBaseRoute : ''}/`) }}>
                             <img className='brand__logo' src={Logo} alt={`Logo ${context.appName}`} />
                             <strong className='brand__name'>{context.appName}</strong>
                         </div>

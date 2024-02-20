@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
                     <CallToAction
                         icon={GraphUpIcon}
                         label={t('home.seeForecast')}
-                        handleClickAction={() => { navigate('/forecast') }}
+                        handleClickAction={() => { navigate(`${context.isProduction ? context.productionBaseRoute : ''}/forecast`) }}
                     />
                 </div>
                 <div className='hero__banner'>

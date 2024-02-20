@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+
 import { apiCall } from '../api/weather/apiConnection'
 import AppContext from '../contexts/AppContext'
 import calculateDailyData, { DailyData, formatDate } from '../api/weather/dailyData'
@@ -93,7 +94,7 @@ const WeatherForecastPage: React.FC = () => {
             return result
         } catch (error) {
             // console.error('Error fetching coords data:', error)
-            navigate('/')
+            navigate(`${context.isProduction ? context.productionBaseRoute : ''}/`)
             return []
         }
     }
@@ -109,7 +110,7 @@ const WeatherForecastPage: React.FC = () => {
             return true
         } catch (error) {
             // console.error('Error fetching weather data:', error)
-            navigate('/')
+            navigate(`${context.isProduction ? context.productionBaseRoute : ''}/`)
             return false
         }
     }
@@ -119,7 +120,7 @@ const WeatherForecastPage: React.FC = () => {
             localStorage.setItem(context.lastSearchedCityKey, searchedCity)
             context.setIsSearchingBarLoading(true)
             updateSearchHistory(searchedCity, 12, context.searchHistoryKey)
-            navigate('/forecast', {
+            navigate(`${context.isProduction ? context.productionBaseRoute : ''}/forecast`, {
                 state: {
                     city: searchedCity
                 }
@@ -178,7 +179,7 @@ const WeatherForecastPage: React.FC = () => {
                                                                             </p>
                                                                         </div>
                                                                         <div className='weather-card__content__weather-icon'>
-                                                                            <img src={`/assets/images/weathers/${cityForecast.mostCommonWeatherIcon}.png`} alt={cityForecast.mostCommonWeatherDescription} />
+                                                                            <img src={`${context.isProduction ? '/weather-react' : ''}/assets/images/weathers/${cityForecast.mostCommonWeatherIcon}.png`} alt={cityForecast.mostCommonWeatherDescription} />
                                                                         </div>
                                                                     </div>
                                                                 </div>

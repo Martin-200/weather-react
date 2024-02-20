@@ -7,6 +7,8 @@ interface AppContextType {
     setIsSearchingBarLoading: React.Dispatch<React.SetStateAction<boolean>>
     lastSearchedCityKey: string
     searchHistoryKey: string
+    isProduction: boolean
+    productionBaseRoute: string
 }
 
 const initialAppContext: AppContextType = {
@@ -16,6 +18,8 @@ const initialAppContext: AppContextType = {
     setIsSearchingBarLoading: () => { },
     lastSearchedCityKey: 'lastSearchedCity',
     searchHistoryKey: 'searchHistory',
+    isProduction: process.env.NODE_ENV === 'production',
+    productionBaseRoute: '/weather-react',
 }
 
 const AppContext = createContext<AppContextType>(initialAppContext)
@@ -25,6 +29,8 @@ const AppContextProvider: React.FC<{children: React.ReactNode}> = ({ children })
     const [isSearchingBarLoading, setIsSearchingBarLoading] = useState<boolean>(initialAppContext.isSearchingBarLoading)
     const lastSearchedCityKey = initialAppContext.lastSearchedCityKey
     const searchHistoryKey = initialAppContext.searchHistoryKey
+    const isProduction = initialAppContext.isProduction
+    const productionBaseRoute = initialAppContext.productionBaseRoute
 
     return (
         <AppContext.Provider
@@ -34,7 +40,9 @@ const AppContextProvider: React.FC<{children: React.ReactNode}> = ({ children })
                 isSearchingBarLoading,
                 setIsSearchingBarLoading,
                 lastSearchedCityKey,
-                searchHistoryKey
+                searchHistoryKey,
+                isProduction,
+                productionBaseRoute
             }}
         >
             {children}
