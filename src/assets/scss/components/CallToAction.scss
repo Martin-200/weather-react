@@ -1,0 +1,62 @@
+.cta {}
+
+// /* CSS */
+.cta {
+    @apply inline-flex flex-row justify-center items-center gap-1.5 appearance-none bg-clip-padding bg-initial text-center font-bold cursor-pointer shrink-0 overflow-visible pointer-events-auto relative no-underline normal-case select-none touch-manipulation w-auto break-keep z-0 m-0 border-none before:bg-gradient-to-tr before:size-full before:z-[-2] before:left-0 before:top-0 after:bg-initial after:bg-gradient-to-tr after:transition-all after:duration-100 after:ease-out after:z-[-1] after:inset-1 ease-in hover:after:inset-0;
+
+    &:before, &:after{
+        @apply rounded-lg content-[""] block overflow-hidden absolute;
+    }
+
+    &--color{
+        &-black{
+            @apply text-white fill-white stroke-white before:from-gray-200 before:to-gray-100 after:from-gray-900 after:to-gray-500 dark:before:from-gray-800 dark:before:to-gray-600
+        }
+
+        &-blue{
+            @apply text-white fill-white stroke-white before:from-indigo-300 before:to-sky-200 after:from-indigo-700 after:to-sky-400 dark:before:from-indigo-600 dark:before:to-sky-500
+        }
+
+        &-white{
+            @apply text-gray-500 fill-gray-500 stroke-gray-500 before:from-gray-200 before:to-gray-100 after:from-gray-100 after:to-white dark:before:from-gray-400 dark:before:to-gray-300
+        }
+    }
+
+    &--size{
+        &-small{
+            @apply px-4 py-2 text-sm
+        }
+
+        &-normal{
+            @apply px-8 py-4 text-lg
+        }
+
+        &-large{
+            @apply px-12 py-6 text-xl
+        }
+    }
+
+    &__icon{
+        &--spin{
+            @apply animate-spin;
+        }
+
+        &--type{
+            &-fill{
+                @apply fill-inherit stroke-none;
+            }
+
+            &-stroke{
+                @apply stroke-inherit fill-none;
+            }
+        }
+
+        > svg{
+            @apply size-6;
+        }
+    }
+
+    &__label{
+        @apply text-inherit
+    }
+}

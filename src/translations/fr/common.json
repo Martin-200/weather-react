@@ -1,0 +1,31 @@
+{
+    "header": {
+        "searchBarPlaceholder": "Rechercher une ville ...",
+        "search": "Rechercher",
+        "switchLanguageTip": "Changer la langue de l'application",
+        "language": "Langage"
+    },
+    "footer": {
+        "sendAMail": "Envoyer un mail"
+    },
+    "home": {
+        "title": "Ne soyez plus dépassé par la météo !",
+        "description": "Notre solution {{ appName }} vous apporte en temps réel les températures des villes partout dans le monde, ainsi que les prévisions météorologiques des jours à venir rapidement et gratuitement.",
+        "seeForecast": "Voir les prévisions"
+    },
+    "weatherForecast": {
+        "noSearchTitle": "C'est parti !",
+        "noSearchDescription": "Recherchez le nom de votre ville pour connaître les prévisions !",
+        "noResultsTitle": "Zéro résultat",
+        "noResultsDescription": "La recherche n'a pas abouti. Il est possible que vous ayez fait une faute d'orthographe, ou bien que la ville n'existe pas",
+        "howIsTheWeather": "Quel temps fait-il à",
+        "humidity": "Humidité",
+        "wind": "Vent",
+        "history": "Historique de recherche"
+    },
+    "error": {
+        "code": "Erreur {{ errorCode }}",
+        "backHome": "Accueil",
+        "404": "Vous semblez perdu"
+    }
+}

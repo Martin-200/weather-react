@@ -1,0 +1,31 @@
+{
+    "header": {
+        "searchBarPlaceholder": "Search for a city...",
+        "search": "Search",
+        "switchLanguageTip": "Switch the application language",
+        "language": "Language"
+    },
+    "footer": {
+        "sendAMail": "Send an email"
+    },
+    "home": {
+        "title": "Don't be overwhelmed by the weather anymore !",
+        "description": "Our {{ appName }} solution brings you real-time temperatures of cities all around the world, as well as weather forecasts for the upcoming days quickly and for free.",
+        "seeForecast": "See forecasts"
+    },
+    "weatherForecast": {
+        "noSearchTitle": "Let's get started !",
+        "noSearchDescription": "Search for the name of your city to get the forecasts !",
+        "noResultsTitle": "No results",
+        "noResultsDescription": "The search did not yield any results. You may have misspelled, or the city may not exist",
+        "howIsTheWeather": "How's the weather in",
+        "humidity": "Humidity",
+        "wind": "Wind",
+        "history": "Search history"
+    },
+    "error": {
+        "code": "Error {{ errorCode }}",
+        "backHome": "Home",
+        "404": "You seem lost"
+    }
+}

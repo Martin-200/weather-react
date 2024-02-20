@@ -1,0 +1,44 @@
+.footer {
+    @apply min-w-64 w-full px-5%;
+
+    &__container {
+        @apply max-w-screen-2xl m-auto w-full pt-6;
+
+        .footer-wave {
+            @apply h-24 sm:h-36 md:h-48 bg-gradient-to-tr from-indigo-700 to-sky-400 relative;
+
+            &__container {
+                @apply absolute top-0 left-0 size-full overflow-hidden leading-3;
+
+                >svg {
+                    @apply relative block h-full fill-white dark:fill-gray-900 w-[145%];
+                }
+            }
+        }
+
+        .footer-infos {
+            @apply flex justify-between items-center gap-3 py-2 px-3;
+
+            &__contact{
+                @apply flex justify-start items-center gap-3;
+
+                >#copyright {
+                    @apply text-xs sm:text-sm;
+                }
+    
+                &__social-networks {
+                    @apply flex justify-center items-center gap-3;
+    
+                    &--item {
+                        @apply flex justify-center items-center size-4 sm:size-6;
+    
+                        >svg {
+                            @apply size-full fill-gray-700 dark:fill-gray-100;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.tooltip{
+    @apply absolute z-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-500 px-4 py-3 rounded-lg max-w-64 shadow-md;
+
+    &__content{
+        @apply w-full;
+    }
+    
+    &--top{
+        &-0{
+            @apply top-0;
+        }
+        &-4{
+            @apply top-4;
+        }
+        &-16{
+            @apply top-16;
+        }
+        &-20{
+            @apply top-20;
+        }
+    }
+    &--bottom{
+        &-0{
+            @apply bottom-0;
+        }
+        &-4{
+            @apply bottom-4;
+        }
+        &-16{
+            @apply bottom-16;
+        }
+        &-20{
+            @apply bottom-20;
+        }
+    }
+    &--left{
+        &-0{
+            @apply left-0;
+        }
+        &-4{
+            @apply left-4;
+        }
+        &-16{
+            @apply left-16;
+        }
+        &-20{
+            @apply left-20;
+        }
+    }
+    &--right{
+        &-0{
+            @apply right-0;
+        }
+        &-4{
+            @apply right-4;
+        }
+        &-16{
+            @apply right-16;
+        }
+        &-20{
+            @apply right-20;
+        }
+    }
+}

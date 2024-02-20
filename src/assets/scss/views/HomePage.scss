@@ -1,0 +1,29 @@
+.hero{
+    @apply flex flex-col md:flex-row justify-center items-center min-h-0 md:min-h-hero gap-4 md:gap-0;
+
+    &__content{
+        @apply basis-3/5 lg:basis-1/2 flex flex-col justify-center items-start gap-8 sm:gap-12 px-5% py-6 md:py-12;
+
+        &__title{
+            @apply text-5xl lg:text-7xl bg-gradient-to-tr from-indigo-700 to-sky-400;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        &__description{
+            @apply text-lg max-w-xl;
+        }
+
+        .cta{
+            @apply w-full sm:w-auto
+        }
+    }
+
+    &__banner{
+        @apply basis-2/5 lg:basis-1/2 w-2/3 sm:w-1/2 md:w-auto;
+
+        > img{
+            @apply object-cover max-h-hero mx-auto select-none;
+        }
+    }
+}

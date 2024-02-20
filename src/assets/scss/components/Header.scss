@@ -1,0 +1,90 @@
+.header {
+    @apply min-w-64 w-full px-5%;
+
+    &__container {
+        @apply max-w-screen-2xl m-auto w-full flex justify-start items-center flex-col md:flex-row gap-4 md:gap-2 px-3 py-6 relative;
+
+        .brand {
+            @apply flex justify-start items-center basis-1/3 lg:basis-1/4;
+            
+            &__container{
+                @apply flex justify-center items-center gap-2 cursor-pointer select-none w-fit;
+            }
+
+            &__logo {
+                @apply size-10;
+            }
+
+            &__name {
+                @apply font-title text-2xl text-gray-800 dark:text-gray-100;
+            }
+        }
+
+        .search {
+            @apply flex justify-center items-center basis-2/3 lg:basis-1/2;
+
+            &__box {
+                @apply flex justify-between items-center gap-2 w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-500 p-2 rounded-lg shadow-md;
+
+                &:has(.search__box__input:focus){
+                    .search__box__icon{                        
+                        @apply rotate-45;
+                    }
+                }
+
+                &__icon {
+                    @apply size-6 min-w-6 fill-gray-700 dark:fill-gray-100 mx-1 rotate-0 ease-in duration-150;
+                }
+
+                &__input {
+                    @apply appearance-none w-full h-8 outline-none dark:text-gray-200 bg-inherit;
+                }
+
+                .cta{
+                    @apply rounded-lg border border-solid border-transparent dark:border-gray-500;
+                    &__label{
+                        @apply hidden sm:block;
+                    }
+                }
+            }
+        }
+
+        .language-selector{
+            @apply flex justify-start items-center lg:basis-1/4 absolute md:relative right-3 md:right-0;
+
+            &__container{
+                @apply relative;
+            }
+
+            &__tooltip{
+                @apply flex flex-col justify-center items-start gap-2;
+
+                &__language{
+                    @apply flex justify-start items-center gap-2 w-full p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-600;
+
+                    &--selected{
+                        @apply bg-gray-200 dark:bg-gray-800;
+                    }
+
+                    &--flag{
+                        @apply min-w-8 w-8 h-auto;
+                    }
+
+                    &--name{
+                        @apply text-ellipsis overflow-hidden text-sm dark:text-gray-100
+                    }
+                }
+            }
+
+            .tooltip{
+                @apply right-[-1em];
+            }
+
+            .cta{
+                &__label{
+                    @apply hidden sm:block;
+                }
+            }
+        }
+    }
+}

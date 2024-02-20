@@ -1,0 +1,15 @@
+.layout{
+    @apply min-w-64 w-full px-5%;
+    
+    &__container{
+        @apply max-w-screen-2xl m-auto w-full;
+    }
+
+    &-app{
+        @apply flex flex-col justify-start items-center w-full;
+
+        main{
+            @apply w-full;
+        }
+    }
+}

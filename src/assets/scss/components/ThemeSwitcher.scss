@@ -1,0 +1,19 @@
+.theme-switcher{
+    @apply flex justify-center items-center gap-1.5 p-1.5 rounded-lg bg-gray-100 dark:bg-gray-700;
+
+    &__theme{
+        @apply rounded-lg p-1.5 border-solid border-gray-300;
+
+        > svg{
+            @apply size-4 sm:size-6 stroke-gray-700 dark:stroke-gray-100 fill-none;
+        }
+
+        &--selected{
+            @apply bg-blue-500;
+
+            > svg{
+                @apply stroke-white;
+            }
+        }
+    }
+}

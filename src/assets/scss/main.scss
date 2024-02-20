@@ -1,0 +1,13 @@
+*{
+    @apply box-border text-inherit;
+    scroll-behavior: smooth;
+}
+
+body{
+    @apply font-text text-gray-700 bg-white font-medium text-base dark:bg-gray-900 dark:text-gray-100;
+    // background: linear-gradient(135deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%); // --> theme cool
+
+    h1, h2, h3, h4, h5, h6, .title{
+        @apply font-title;
+    }
+}
