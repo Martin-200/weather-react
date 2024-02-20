@@ -1,12 +1,12 @@
 <!--?xml version="1.0" encoding="UTF-8"?-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>__SITEURL__/</loc>
+		<loc>http://Martin-200.github.io/weather-react/</loc>
 		<lastmod>2024-02-20</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>__SITEURL__/forecast</loc>
+		<loc>http://Martin-200.github.io/weather-react/forecast</loc>
 		<lastmod>2024-02-20</lastmod>
 		<priority>1.0</priority>
 	</url>
