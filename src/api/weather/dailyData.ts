@@ -1,4 +1,4 @@
-interface DailyData {
+export interface DailyData {
     dt: number
     temperatures: number[]
     humidity: number[]

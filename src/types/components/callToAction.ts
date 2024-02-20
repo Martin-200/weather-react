@@ -4,7 +4,7 @@ export interface CallToActionProps {
     type?: 'button' | 'submit' | 'reset'
     icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>> | null
     iconType?: 'fill' | 'stroke'
-    label?: string
+    label?: string | any
     color?: 'black' | 'blue' | 'white'
     size?: 'small' | 'normal' | 'large'
     handleClickAction?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void

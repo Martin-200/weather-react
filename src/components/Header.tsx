@@ -31,8 +31,7 @@ const Header: React.FC = () => {
         }
     }, [location.state, navigate])
 
-    const searchCityForecast = (): void => {
-        const searchedCity = city.trim()
+    const searchCityForecast = (searchedCity: string): void => {
         if (searchedCity.length) { // Si la recherche n'est pas vide, alors la requête est envoyée
             localStorage.setItem(context.lastSearchedCityKey, searchedCity)
             context.setIsSearchingBarLoading(true)

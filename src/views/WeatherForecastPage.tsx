@@ -3,12 +3,13 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { apiCall } from '../api/weather/apiConnection'
 import AppContext from '../contexts/AppContext'
-import calculateDailyData, { formatDate } from '../api/weather/dailyData'
+import calculateDailyData, { DailyData, formatDate } from '../api/weather/dailyData'
 import '../assets/scss/views/WeatherForecastPage.scss'
 import SearchIcon from '../assets/icons/SearchIcon.svg?react'
 import CityIcon from '../assets/icons/CityIcon.svg?react'
 import LoaderIcon from '../assets/icons/LoaderIcon.svg?react'
 import { updateSearchHistory } from '../code/search'
+import { CityCoords } from '../types/views/weatherForecastPage/cityCoords'
 
 const WeatherForecastPage: React.FC = () => {
     const context = useContext(AppContext)
@@ -18,8 +19,14 @@ const WeatherForecastPage: React.FC = () => {
 
     const [isACitySearchedFor, setIsACitySearchedFor] = useState<boolean>(false)
     const [areCityForecastFound, setAreCityForecastFound] = useState<boolean>(false)
-    const [cityCoords, setCityCoords] = useState([{}])
-    const [cityForecasts, setCityForecasts] = useState([{}])
+    const [cityCoords, setCityCoords] = useState<CityCoords[]>([{
+        name: '',
+        lat: 0,
+        lon: 0,
+        country: ''
+    }])
+    // const [cityForecasts, setCityForecasts] = useState([{}])
+    const [cityForecasts, setCityForecasts] = useState<DailyData[]>([])
 
     const [searchHistory, setSearchHistory] = useState<string[]>([])
 
@@ -37,8 +44,19 @@ const WeatherForecastPage: React.FC = () => {
     const loadCityForecastDatas = async () => {
         setIsACitySearchedFor(false)
         setAreCityForecastFound(false)
-        setCityCoords([{}])
-        setCityForecasts([{}])
+        setCityCoords([{
+            name: '',
+            lat: 0,
+            lon: 0,
+            country: ''
+        }])
+        setCityForecasts([{
+            dt: 0,
+            temperatures: [],
+            humidity: [],
+            windSpeed: [],
+            weatherIcons: []
+        }])
 
         const lastSearchedCity = location.state?.city || localStorage.getItem(context.lastSearchedCityKey) || ''
 
@@ -59,7 +77,7 @@ const WeatherForecastPage: React.FC = () => {
                     context.setIsSearchingBarLoading(false)
                 }
             } catch (error) {
-                console.error('Error fetching data:', error)
+                // console.error('Error fetching data:', error)
                 context.setIsSearchingBarLoading(false)
             }
         }
@@ -118,7 +136,7 @@ const WeatherForecastPage: React.FC = () => {
                             {areCityForecastFound
                                 ? ( // Si une recherche est active et que les prévisions météo ont été trouvées
                                     <>
-                                        {(cityCoords && cityCoords[0] && cityCoords[0].name)
+                                        {(cityCoords && cityCoords[0] && cityCoords[0].name && cityCoords[0].name.length)
                                             ? ( // Si les coordonnées de la ville sont trouvées
                                                 <>
                                                     <section className='weather__results'>

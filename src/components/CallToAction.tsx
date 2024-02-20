@@ -2,7 +2,7 @@ import { type CallToActionProps } from '../types/components/callToAction'
 
 import '../assets/scss/components/CallToAction.scss'
 
-const CallToAction: React.FC = ({ label, icon: Icon, iconType = 'fill', handleClickAction, color = 'black', size = 'normal', type = 'button', full, spin }: CallToActionProps) => {
+const CallToAction: React.FC<CallToActionProps> = ({ label, icon: Icon, iconType = 'fill', handleClickAction, color = 'black', size = 'normal', type = 'button', full, spin }) => {
     return (
         <button type={type} className={`cta cta--color-${color} cta--size-${size} ${full ? ' w-full' : ''}`} onClick={handleClickAction}>
             {Icon && (
