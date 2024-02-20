@@ -2,7 +2,7 @@
     @apply min-w-64 w-full px-5%;
 
     &__container {
-        @apply max-w-screen-2xl m-auto w-full flex justify-start items-center flex-col md:flex-row gap-4 md:gap-2 px-3 py-6 relative;
+        @apply max-w-screen-2xl m-auto w-full flex justify-start items-center flex-col md:flex-row gap-4 md:gap-2 px-0 sm:px-3 py-6 relative;
 
         .brand {
             @apply flex justify-start items-center basis-1/3 lg:basis-1/4;

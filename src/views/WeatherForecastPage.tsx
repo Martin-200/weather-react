@@ -289,21 +289,32 @@ const WeatherForecastPage: React.FC = () => {
                     <h2 className='weather__history__title'>
                         {t('weatherForecast.history')}
                     </h2>
-                    <ul className='weather__history__list'>
-                        {searchHistory.map((city, index) => (
-                            <a
-                                href='#'
-                                key={index}
-                                className='weather__history__card'
-                                onClick={() => { searchCityForecast(city.trim()) }}
-                            >
-                                <CityIcon />
-                                <p className='weather__history__card--title'>
-                                    {city}
-                                </p>
-                            </a>
-                        ))}
-                    </ul>
+                    <div className='weather__history__list'>
+                        {searchHistory.length
+                            ? (
+                                searchHistory.map((city, index) => (
+                                    <a
+                                        href='#'
+                                        key={index}
+                                        className='weather__history__card'
+                                        onClick={() => { searchCityForecast(city.trim()) }}
+                                    >
+                                        <CityIcon />
+                                        <p className='weather__history__card--title'>
+                                            {city}
+                                        </p>
+                                    </a>
+                                ))
+                            )
+                            : (
+                                <>
+                                    <p className='weather__history__list--is-empty'>
+                                        {t('weatherForecast.historyIsEmpty')}
+                                    </p>
+                                </>
+                            )
+                        }
+                    </div>
                 </section>
             </div>
         </>

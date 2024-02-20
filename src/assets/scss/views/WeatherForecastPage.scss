@@ -2,33 +2,33 @@
     @apply px-5%;
 
     &__results{
-        @apply text-center py-4;
+        @apply text-center py-2 sm:py-4;
 
         &--no-search, &--no-results{
-            @apply my-8 mx-auto max-w-96 flex flex-col justify-center items-center gap-6;
+            @apply my-4 sm:my-8 mx-auto max-w-96 flex flex-col justify-center items-center gap-4 sm:gap-6;
 
             > h1{
-                @apply text-3xl font-title text-gray-800 dark:text-blue-400
+                @apply text-2xl sm:text-3xl font-title text-gray-800 dark:text-blue-400
             }
 
             > p{
-                @apply text-xl
+                @apply text-base sm:text-xl
             }
 
             > svg{
-                @apply w-24 fill-none stroke-gray-800 dark:stroke-gray-500;
+                @apply w-16 sm:w-24 fill-none stroke-blue-500 dark:stroke-gray-500;
             }
         }
 
         &__lead{
-            @apply text-lg dark:text-gray-100
+            @apply text-base md:text-lg dark:text-gray-100
         }
 
         &__location{
-            @apply flex justify-center items-end gap-3 mt-3;
+            @apply flex justify-center items-end gap-3 mt-2 sm:mt-3;
 
             &--city{
-                @apply text-5xl dark:text-gray-100
+                @apply text-3xl md:text-5xl dark:text-gray-100
             }
 
             &--country{
@@ -46,20 +46,20 @@
         }
     
         .weather-card{
-            @apply shadow-md rounded-3xl overflow-hidden hover:scale-105 ease-in duration-100;
+            @apply shadow-md rounded-2xl sm:rounded-3xl overflow-hidden hover:scale-105 ease-in duration-100;
 
             &__content{
                 @apply bg-gradient-to-tr from-indigo-700 to-sky-400;
 
                 &--background{
-                    @apply p-6 relative bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/card-bg.png')] flex flex-col justify-between items-start gap-12;
+                    @apply p-4 sm:p-6 relative bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/card-bg.png')] flex flex-col justify-between items-start gap-6 sm:gap-12;
                 }
                 
                 &__temperature{
-                    @apply text-white text-5xl font-semibold;
+                    @apply text-white text-3xl sm:text-5xl font-semibold;
 
                     &--degree{
-                        @apply relative bottom-4 left-1 text-2xl font-normal;
+                        @apply relative bottom-2 sm:bottom-4 left-1 text-xl sm:text-2xl font-normal;
                     }
                 }
 
@@ -74,7 +74,7 @@
                 }
 
                 &__weather-icon{
-                    @apply absolute top-6 right-6 size-16 p-3 bg-gradient-to-tr from-gray-900 to-gray-500 flex justify-center items-center rounded-full;
+                    @apply absolute top-4 sm:top-6 right-4 sm:right-6 size-12 sm:size-16 p-3 bg-gradient-to-tr from-gray-900 to-gray-500 flex justify-center items-center rounded-full;
 
                     > img{
                         @apply w-full;
@@ -83,10 +83,10 @@
             }
 
             &__footer{
-                @apply p-6 bg-white dark:bg-gray-700;
+                @apply p-4 sm:p-6 bg-white dark:bg-gray-700;
 
                 &__date{
-                    @apply text-xl text-gray-700 dark:text-white font-bold capitalize inline-flex justify-start items-center gap-2;
+                    @apply text-lg sm:text-xl text-gray-700 dark:text-white font-bold capitalize inline-flex justify-start items-center gap-2;
                     
                     &--separator{
                         @apply bg-blue-500 dark:bg-blue-400 w-0.5 h-3 rotate-12;
@@ -94,7 +94,7 @@
                 }
 
                 &__weather{
-                    @apply mt-2;
+                    @apply mt-1 sm:mt-2;
 
                     &--approximate-temperatures{
                         @apply inline-flex gap-1;
@@ -107,7 +107,7 @@
                     }
                     
                     p{
-                        @apply text-base text-gray-500 dark:text-gray-200 font-normal;
+                        @apply text-sm sm:text-base text-gray-500 dark:text-gray-200 font-normal;
                     }
                 }
             }

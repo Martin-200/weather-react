@@ -21,7 +21,8 @@
         "howIsTheWeather": "How's the weather in",
         "humidity": "Humidity",
         "wind": "Wind",
-        "history": "Search history"
+        "history": "Search history",
+        "historyIsEmpty": "A little empty for now 😉"
     },
     "error": {
         "code": "Error {{ errorCode }}",

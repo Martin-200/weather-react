@@ -11,11 +11,11 @@
         }
 
         &__description{
-            @apply text-lg max-w-xl;
+            @apply text-base sm:text-lg max-w-xl;
         }
 
         .cta{
-            @apply w-full sm:w-auto
+            @apply w-full sm:w-auto text-base sm:text-lg
         }
     }
 

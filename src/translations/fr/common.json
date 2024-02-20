@@ -21,7 +21,8 @@
         "howIsTheWeather": "Quel temps fait-il à",
         "humidity": "Humidité",
         "wind": "Vent",
-        "history": "Historique de recherche"
+        "history": "Historique de recherche",
+        "historyIsEmpty": "Un peu vide pour l'instant 😉"
     },
     "error": {
         "code": "Erreur {{ errorCode }}",
