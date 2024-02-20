@@ -178,7 +178,7 @@ const WeatherForecastPage: React.FC = () => {
                                                                             </p>
                                                                         </div>
                                                                         <div className='weather-card__content__weather-icon'>
-                                                                            <img src={`./src/assets/images/weathers/${cityForecast.mostCommonWeatherIcon}.png`} alt={cityForecast.mostCommonWeatherDescription} />
+                                                                            <img src={`/assets/images/weathers/${cityForecast.mostCommonWeatherIcon}.png`} alt={cityForecast.mostCommonWeatherDescription} />
                                                                         </div>
                                                                     </div>
                                                                 </div>
